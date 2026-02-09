@@ -1,4 +1,4 @@
-ARG TOMCAT_VERSION=10.1.44-jdk21
+ARG TOMCAT_VERSION=10.1.49-jdk21
 FROM tomcat:$TOMCAT_VERSION
 
 LABEL Maintainer JamfDevops <devops@jamf.com>
@@ -14,7 +14,6 @@ RUN apt-get update -qq && \
 COPY startup.sh /startup.sh
 COPY log4j.stdout.replace /log4j.stdout.replace
 COPY log4j2.stdout.appenders.replace /log4j2.stdout.appenders.replace
-COPY log4j2.stdout.loggers.analytics.replace /log4j2.stdout.loggers.analytics.replace
 COPY log4j2.stdout.loggers.root.replace /log4j2.stdout.loggers.root.replace
 COPY log4j2.stdout.loggers.vpp.replace /log4j2.stdout.loggers.vpp.replace
 COPY server.template /jamfpro-config/server.template
