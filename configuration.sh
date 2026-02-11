@@ -58,11 +58,9 @@ setup_stdout_logging() {
         echo_time "Add stdout logging to log4j2.xml file"
         sed -e '/<Appenders>/ {r /log4j2.stdout.appenders.replace
           d}' -i ${WEBAPPS_DIR}/ROOT/WEB-INF/classes/log4j2.xml
-        sed -e '/<Root level="info" includeLocation="false">/ {r /log4j2.stdout.loggers.root.replace
+        sed -e '/<AppenderRef ref="JAMF" \/>/ {r /log4j2.stdout.loggers.root.replace
           d}' -i ${WEBAPPS_DIR}/ROOT/WEB-INF/classes/log4j2.xml
-        sed -e '/<Logger name="com.jamfsoftware.analytics.file" level="info" additivity="false" includeLocation="false">/ {r /log4j2.stdout.loggers.analytics.replace
-          d}' -i ${WEBAPPS_DIR}/ROOT/WEB-INF/classes/log4j2.xml
-        sed -e '/<AppenderRef ref="JAMFVPP"\/>/ {r /log4j2.stdout.loggers.vpp.replace
+        sed -e '/<AppenderRef ref="JAMFVPP" \/>/ {r /log4j2.stdout.loggers.vpp.replace
           d}' -i ${WEBAPPS_DIR}/ROOT/WEB-INF/classes/log4j2.xml
       fi
     fi

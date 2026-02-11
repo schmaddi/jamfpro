@@ -1,2 +1,2 @@
-        <Root level="info" includeLocation="false">
-            <AppenderRef ref="Console"/>
+                    <AppenderRef ref="JAMF" />
+                    <AppenderRef ref="Console" />
